@@ -1,0 +1,2 @@
+include ':pagedtextviewlib'
+rootProject.name='PagedTextViewLib'
