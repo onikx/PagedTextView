@@ -1,14 +1,24 @@
+# Built application files
+*.apk
+*.ap_
+
+# Intellij
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+#OSX
 .DS_Store
-/build
-/captures
+pom-default.xml
+
+# Android Studio captures folder
+captures/
+
 .externalNativeBuild
 .cxx

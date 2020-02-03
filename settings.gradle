@@ -1,2 +1,2 @@
-include ':pagedtextviewlib'
-rootProject.name='PagedTextViewLib'
+include ':pagedtextview'
+rootProject.name='PagedTextView'
