@@ -24,6 +24,9 @@ android {
     }
 }
 
+//apply from: 'https://raw.githubusercontent.com/onikx/PagedTextView/master/bintray.gradle'
+//apply from: 'https://raw.githubusercontent.com/onikx/PagedTextView/master/publications.gradle'
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
