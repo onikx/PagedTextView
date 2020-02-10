@@ -2,30 +2,47 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'pagedtextview'
+    artifact = 'pagedtextview'
+    libraryName = 'PagedTextView'
+    libraryVersion = '0.0.1'
+    libraryGroupId = 'com.github.onik'
+    libraryDescription = 'Android TextView with pagination'
+    siteUrl = 'https://github.com/onikx/PagedTextView'
+    gitUrl = 'https://github.com/onikx/PagedTextView.git'
+    developerId = 'onik'
+    developerName = 'Onik'
+    developerEmail = 'onikx@users.noreply.github.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
+
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
-        versionName "0.0.1"
+        versionName libraryVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
-        debug {
-            minifyEnabled false
-        }
         release {
-            minifyEnabled true
+            minifyEnabled false
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
 
-//apply from: 'https://raw.githubusercontent.com/onikx/PagedTextView/master/bintray.gradle'
-//apply from: 'https://raw.githubusercontent.com/onikx/PagedTextView/master/publications.gradle'
+apply from: 'bintray.gradle'
+apply from: 'publish.gradle'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

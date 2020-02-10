@@ -1,2 +1,2 @@
-include ':pagedtextview'
-rootProject.name='PagedTextView'
+include ':lib'
+project(':lib').name = 'pagedtextview'
