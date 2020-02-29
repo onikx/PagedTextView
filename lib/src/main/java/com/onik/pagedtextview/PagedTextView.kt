@@ -28,7 +28,7 @@ class PagedTextView : AppCompatTextView {
 
     fun size(): Int = pageList.size
 
-    fun nextPage(index: Int) {
+    fun next(index: Int) {
         pageIndex = index
         setPageText()
     }
@@ -152,9 +152,8 @@ class PagedTextView : AppCompatTextView {
         }
     }
 
-    private fun from(layout: Layout): Layout {
-
-        return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+    private fun from(layout: Layout): Layout =
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             @Suppress("DEPRECATION")
             StaticLayout(
                 originalText,
@@ -164,8 +163,7 @@ class PagedTextView : AppCompatTextView {
                 lineSpacingMultiplier,
                 lineSpacingExtra,
                 includeFontPadding)
-        }
-        else {
+        } else {
             StaticLayout.Builder
                 .obtain(originalText, 0, originalText.length, paint, layout.width)
                 .setAlignment(layout.alignment)
@@ -178,8 +176,6 @@ class PagedTextView : AppCompatTextView {
                 .setMaxLines(maxLines)
                 .build()
         }
-
-    }
 
     private fun StaticLayout.Builder.setUseLineSpacingFromFallbacks(): StaticLayout.Builder {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
