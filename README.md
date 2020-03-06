@@ -6,7 +6,7 @@ To use this library your minSdkVersion must be >= 19.
 
 ```
 dependencies {
-    implementation 'com.github.onik:pagedtextview:0.0.1'
+    implementation 'com.github.onikx:pagedtextview:0.1.2'
 }
 ```
 
